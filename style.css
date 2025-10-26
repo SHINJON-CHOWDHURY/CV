@@ -1,0 +1,295 @@
+body {
+       font-family: Arial, sans-serif;
+       margin: 0;
+       background: #f4f4f4;
+}
+
+.resume {
+       display: grid;
+       grid-template-columns: 1fr 2fr;
+       max-width: 1000px;
+       margin: 30px auto;
+       background: #fff;
+       box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* LEFT SIDE */
+.left {
+       background: #111;
+       color: #fff;
+       padding: 30px;
+}
+
+.profile img {
+       width: 180px;
+       display: block;
+       margin: 0 auto 25px;
+       border-radius: 50%;
+}
+
+.section {
+       margin-bottom: 30px;
+}
+
+.section a {
+       text-decoration: none;
+       color: white;
+}
+
+.section h3 {
+       text-transform: uppercase;
+       font-size: 16px;
+       font-weight: bold;
+       margin-bottom: 12px;
+}
+
+.left p,
+.left li {
+       font-size: 14px;
+       line-height: 1.6;
+}
+
+.left ul {
+       margin: 0;
+       padding-left: 20px;
+       list-style: none;
+}
+
+.left ul li {
+       margin-bottom: 8px;
+       position: relative;
+}
+
+.left ul li::before {
+       content: "◉";
+       color: #a5734a;
+       margin-right: 8px;
+       font-size: 12px;
+}
+
+/* RIGHT SIDE */
+.right {
+       background: #fdfaf6;
+       padding: 0;
+       margin-left: 10px;
+       transition: background 0.4s, color 0.4s;
+       /* For smooth fade */
+}
+
+.banner {
+       background: #a5734a;
+       color: #fff;
+       padding: 40px;
+       clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+       position: relative;
+       /* This is needed to position the button */
+}
+
+.banner h1 {
+       margin: 0;
+       font-size: 32px;
+       font-weight: bold;
+       text-transform: uppercase;
+}
+
+.banner h2 {
+       margin: 5px 0 0;
+       font-size: 18px;
+       font-weight: normal;
+}
+
+.right .section {
+       padding: 30px 40px;
+}
+
+.right .section h3 {
+       font-size: 18px;
+       font-weight: bold;
+       text-transform: uppercase;
+       margin-bottom: 12px;
+}
+
+.job {
+       margin-bottom: 25px;
+}
+
+.job h4 {
+       font-size: 16px;
+       font-weight: bold;
+       margin: 0 0 6px;
+}
+
+.job p {
+       font-size: 14px;
+       line-height: 1.6;
+       margin: 0 0 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+       .resume {
+              grid-template-columns: 1fr;
+       }
+
+       .banner {
+              clip-path: none;
+       }
+}
+
+table,
+td,
+th {
+       border: 2px solid white;
+       text-align: center;
+}
+
+.down_btn {
+       margin-top: 20px;
+       border: 2px solid blue;
+       transition: 0.4s ease;
+       -webkit-transition: 0.4s ease;
+       -moz-transition: 0.4s ease;
+       -ms-transition: 0.4s ease;
+       -o-transition: 0.4s ease;
+       height: 37px;
+}
+
+.down-link {
+       display: flex;
+       text-align: center;
+}
+
+#icon {
+       padding: 0px 5px;
+}
+
+.down_btn:hover {
+       box-shadow: -1px 2px 15px 8px gray;
+}
+
+#git_link {
+       color: blue;
+}
+
+.git-link a {
+       padding: 5px 8px;
+       background-color: #fff;
+       border-radius: 6px;
+       -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+       -ms-border-radius: 6px;
+       -o-border-radius: 6px;
+       transition: 1s ease;
+       -webkit-transition: 1s ease 0.5s;
+       -moz-transition: 1s ease;
+       -ms-transition: 1s ease;
+       -o-transition: 1s ease;
+       text-align: center;
+}
+
+.git-link:hover a {
+       text-decoration: underline;
+}
+
+.acv {
+       margin-top: 30px;
+}
+
+.acv h4,
+.acv h3 {
+       font-weight: bolder;
+}
+
+.right {
+       margin-left: 0;
+}
+
+.acv {
+       margin-left: 10px;
+}
+
+/* --- Dark Mode Toggle Button --- */
+#darkmode-toggle {
+       width: 0;
+       height: 0;
+       visibility: hidden;
+}
+
+.dark-mode-label {
+       width: 70px;
+       height: 30px;
+       position: absolute;
+       /* Positioned inside the .banner */
+       top: 8px;
+
+       /* This value moves it left, out of the clipped corner */
+       /* Adjust 120px to move it left or right */
+       right: 20px;
+
+       z-index: 100;
+       display: block;
+       background: #e0e0e0;
+       border-radius: 100px;
+       box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2),
+              inset 0 -2px 5px rgba(255, 255, 255, 0.7);
+       cursor: pointer;
+       transition: background 0.4s;
+}
+
+.dark-mode-label::before {
+       content: "";
+       width: 22px;
+       height: 22px;
+       position: absolute;
+       top: 4px;
+       left: 4px;
+       background: linear-gradient(180deg, #ffcc80, #ffb74d);
+       border-radius: 50px;
+       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+       transition: all 0.4s;
+}
+
+.dark-mode-label svg {
+       position: absolute;
+       width: 18px;
+       height: 18px;
+       top: 6px;
+       z-index: 10;
+       transition: all 0.4s;
+}
+
+.dark-mode-label svg.sun {
+       left: 6px;
+       fill: #ffffff;
+}
+
+.dark-mode-label svg.moon {
+       right: 6px;
+       fill: #757575;
+}
+
+/* --- Toggle Button 'Checked' State --- */
+#darkmode-toggle:checked+.dark-mode-label {
+       background: #424242;
+}
+
+#darkmode-toggle:checked+.dark-mode-label::before {
+       left: 44px;
+       background: linear-gradient(180deg, #757575, #616161);
+}
+
+#darkmode-toggle:checked+.dark-mode-label svg.sun {
+       fill: #757575;
+}
+
+#darkmode-toggle:checked+.dark-mode-label svg.moon {
+       fill: #ffffff;
+}
+
+/* --- This is the new Dark Mode Logic --- */
+.right.dark-mode {
+       background: #111;
+       /* Dark background */
+       color: #fff;
+       /* White text */
+}
